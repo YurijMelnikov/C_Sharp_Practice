@@ -10,13 +10,13 @@ Console.WriteLine ("Введите второе число");
 double secondNumber = double.Parse (Console.ReadLine());
 if (firstNumber == secondNumber)
     {
-    Console.WriteLine ($"Ответ:\n{firstNumber} = {secondNumber}, числа равны");
+    Console.WriteLine ($"{firstNumber} = {secondNumber}, оба числа равны");
     }
     if (firstNumber > secondNumber)
     {
-        Console.WriteLine ($"Ответ:\n{firstNumber} больше {secondNumber}");
+        Console.WriteLine ($"{firstNumber} большее число");
     }
         if (firstNumber < secondNumber)
         {
-            Console.WriteLine ($"Ответ:\n{secondNumber} больше {firstNumber}");
+            Console.WriteLine ($"{secondNumber} большее число");
         }
