@@ -24,6 +24,4 @@ if (max < secondNumber)
         {
         max = thirdNumber;
         }
-Console.WriteLine ($"Из трёх чисел: {firstNumber} {secondNumber} {thirdNumber} \nбольшим является {max}");
-    
-    
+Console.WriteLine ($"Из трёх чисел: {firstNumber} {secondNumber} {thirdNumber} \nбольшим является {max}");       
