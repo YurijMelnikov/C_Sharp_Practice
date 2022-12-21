@@ -23,6 +23,28 @@ int[,] ArrayGeneretion(int numberOfLines, int numberOfColumns, int minArrayValue
     return d2Array;
 }
 
+int[,] ArraySort(int[,] d2Array)
+{
+    int[,] d2SortedArray = d2Array;
+    for (int i = 0; i < d2SortedArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < d2SortedArray.GetLength(1); j++)
+        {
+
+            for (int k = j + 1; k < d2SortedArray.GetLength(1); k++)
+            {
+                if (d2SortedArray[i, j] < d2SortedArray[i, k])
+                {
+                    int buff = d2SortedArray[i, j];
+                    d2SortedArray[i, j] = d2SortedArray[i, k];
+                    d2SortedArray[i, k] = buff;
+                }
+            }
+        }
+    }
+    return d2SortedArray;
+}
+
 void print2dArray(int[,] array)
 {
     Console.Write("\t");
@@ -49,27 +71,7 @@ void printColor(string information, ConsoleColor color)
     Console.ResetColor();
 }
 
-int[,] ArraySort(int[,] d2Array)
-{
-    int[,] d2SortedArray = d2Array;
-    for (int i = 0; i < d2SortedArray.GetLength(0); i++)
-    {
-        for (int j = 0; j < d2SortedArray.GetLength(1); j++)
-        {
 
-            for (int k = j + 1; k < d2SortedArray.GetLength(1); k++)
-            {
-                if (d2SortedArray[i, j] < d2SortedArray[i, k])
-                {
-                    int buff = d2SortedArray[i, j];
-                    d2SortedArray[i, j] = d2SortedArray[i, k];
-                    d2SortedArray[i, k] = buff;
-                }
-            }
-        }
-    }
-    return d2SortedArray;
-}
 
 Console.WriteLine("Введите количество колонок двумерного массива");
 int RowCount = int.Parse(Console.ReadLine());

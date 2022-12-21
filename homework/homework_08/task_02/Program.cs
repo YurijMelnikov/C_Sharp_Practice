@@ -31,6 +31,49 @@ int[,] ArrayGeneretion(int numberOfLines, int numberOfColumns, int minArrayValue
     return d2Array;
 }
 
+int[] SumLines2dArray(int[,] d2Array)
+{
+    int[] sumLines2dArray = new int[d2Array.GetLength(0)];
+    for (int i = 0; i < d2Array.GetLength(0); i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < d2Array.GetLength(1); j++)
+        {
+            sum = sum + d2Array[i, j];
+            sumLines2dArray[i] = sum;
+
+        }
+    }
+    return sumLines2dArray;
+}
+
+int MinAmountOfLine(int[] array)
+{
+    int Min = array[0];
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (Min > array[i])
+        {
+            Min = array[i];
+        }
+    }
+    return Min;
+}
+
+int MinIndex(int[] array, int Min)
+{
+    int minIndex = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == Min)
+        {
+            minIndex = i;
+            return minIndex;
+        }
+    }
+    return minIndex;
+}
+
 void print2dArray(int[,] array)
 {
     Console.Write("\t");
@@ -66,52 +109,6 @@ void printArray(int[] array)
         Console.WriteLine();
     }
 }
-
-int[] SumLines2dArray(int[,] d2Array)
-{
-    int[] sumLines2dArray = new int[LineCount];
-    for (int i = 0; i < d2Array.GetLength(0); i++)
-    {
-        int sum = 0;
-        for (int j = 0; j < d2Array.GetLength(1); j++)
-        {
-            sum = sum + d2Array[i, j];
-            sumLines2dArray[i] = sum;
-
-        }
-    }
-    return sumLines2dArray;
-}
-
-
-int MinAmountOfLine(int[] array)
-{
-    int Min = array[0];
-    for (int i = 1; i < array.Length; i++)
-    {
-        if (Min > array[i])
-        {
-            Min = array[i];
-        }
-    }
-    return Min;
-}
-
-int MinIndex(int[] array, int Min)
-{
-    int minIndex = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (array[i] == Min)
-        {
-            minIndex = i;
-            return minIndex;
-        }
-    }
-    return minIndex;
-}
-
-
 
 
 
